@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.csky.cds.peripheral>
+  <config Version="0.0.1">
+    <Peripheral Name="GPIOA">
+      <Register Name="MODE" Authority="RW" Address="0x40020a00" Width="32" Description="GPIOx Mode Register"/>
+      <Register Name="OTYPE" Authority="RW" Address="0x40020a04" Width="32" Description="GPIOx Open-Drain UP enable Register"/>
+      <Register Name="OSPEEDL" Authority="RW" Address="0x40020a08" Width="32" Description="GPIOx Output Driving Low Register"/>
+      <Register Name="OSPEEDH" Authority="RW" Address="0x40020a0c" Width="32" Description="GPIOx Output Driving High Register"/>
+      <Register Name="PUPL" Authority="RW" Address="0x40020a10" Width="32" Description="GPIOx Pull-up Low Register"/>
+      <Register Name="PUPH" Authority="RW" Address="0x40020a14" Width="32" Description="GPIOx Pull-up High Register"/>
+      <Register Name="PUDL" Authority="RW" Address="0x40020a18" Width="32" Description="GPIOx Pull-down Low Register"/>
+      <Register Name="PUDH" Authority="RW" Address="0x40020a1c" Width="32" Description="GPIOx Pull-down High Register"/>
+      <Register Name="IDAT" Authority="RW" Address="0x40020a20" Width="32" Description="GPIOx input data Register"/>
+      <Register Name="ODAT" Authority="RW" Address="0x40020a24" Width="32" Description="GPIOx output data Register"/>
+      <Register Name="BSR" Authority="RW" Address="0x40020a28" Width="32" Description="GPIOx Bit Set and Reset Register"/>
+      <Register Name="LCK" Authority="RW" Address="0x40020a2c" Width="32" Description="GPIOx Lock Register"/>
+      <Register Name="AFRL" Authority="RW" Address="0x40020a30" Width="32" Description="GPIOx Alternate Function Select Low Register"/>
+      <Register Name="AFRH" Authority="RW" Address="0x40020a34" Width="32" Description="GPIOx Alternate Function Select High Register"/>
+      <Register Name="TGL" Authority="RW" Address="0x40020a38" Width="32" Description="GPIOx Toggle Register"/>
+      <Register Name="IMK" Authority="RW" Address="0x40020a3c" Width="32" Description="GPIOx Input Mask Register"/>
+      <Register Name="HY" Authority="RW" Address="0x40020a40" Width="32" Description="GPIOx Input Hysteresis Enable Register"/>
+      <Register Name="-   -" Authority="RW" Address="0x40020a44" Width="32" Description=""/>
+      <Register Name="-   -" Authority="RW" Address="0x40020a48" Width="32" Description=""/>
+      <Register Name="DEBEN" Authority="RW" Address="0x40020a4c" Width="32" Description="GPIOx Input Debouce Enable Register"/>
+      <Register Name="AIOEN" Authority="RW" Address="0x40020a50" Width="32" Description="GPIOx Analog IO Function Enable Register"/>
+      <Register Name="PND" Authority="RW" Address="0x40020a54" Width="32" Description="GPIOx Input Interrupt Pending Register"/>
+      <Register Name="PNDCLR" Authority="RW" Address="0x40020a58" Width="32" Description="GPIOx Input Interrupt Pending Clear Register"/>
+      <Register Name="TRG0" Authority="RW" Address="0x40020a5c" Width="32" Description="GPIOx Input Interrupt Trigger Register 0"/>
+      <Register Name="TRG1" Authority="RW" Address="0x40020a60" Width="32" Description="GPIOx Input Interrupt Trigger Register 1"/>
+      <Register Name="OTYPE1" Authority="RW" Address="0x40020a64" Width="32" Description="GPIOx Open-Drain DOWN Register"/>
+      <Register Name="ADCAIOEN" Authority="RW" Address="0x40020a68" Width="32" Description="GPIOx ADKEY Analog IO Function Enable Register"/>
+      <Register Name="TKAIOEN" Authority="RW" Address="0x40020a6c" Width="32" Description="GPIOx TOUCHKEY Analog IO Function Enable Register"/>
+      <Register Name="IEEN" Authority="RW" Address="0x40020a70" Width="32" Description="GPIOx IO FORCE INPUT Enable Register"/>
+      <Register Name="IOFUNCOUTCON0" Authority="RW" Address="0x40020a74" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 0"/>
+      <Register Name="IOFUNCOUTCON1" Authority="RW" Address="0x40020a78" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 1"/>
+      <Register Name="IOFUNCOUTCON2" Authority="RW" Address="0x40020a7c" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 2"/>
+      <Register Name="IOFUNCOUTCON3" Authority="RW" Address="0x40020a80" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 3"/>
+    </Peripheral>
+    <Peripheral Name="GPIOB">
+      <Register Name="MODE" Authority="RW" Address="0x40020b00" Width="32" Description="GPIOx Mode Register"/>
+      <Register Name="OTYPE" Authority="RW" Address="0x40020b04" Width="32" Description="GPIOx Open-Drain UP enable Register"/>
+      <Register Name="OSPEEDL" Authority="RW" Address="0x40020b08" Width="32" Description="GPIOx Output Driving Low Register"/>
+      <Register Name="OSPEEDH" Authority="RW" Address="0x40020b0c" Width="32" Description="GPIOx Output Driving High Register"/>
+      <Register Name="PUPL" Authority="RW" Address="0x40020b10" Width="32" Description="GPIOx Pull-up Low Register"/>
+      <Register Name="PUPH" Authority="RW" Address="0x40020b14" Width="32" Description="GPIOx Pull-up High Register"/>
+      <Register Name="PUDL" Authority="RW" Address="0x40020b18" Width="32" Description="GPIOx Pull-down Low Register"/>
+      <Register Name="PUDH" Authority="RW" Address="0x40020b1c" Width="32" Description="GPIOx Pull-down High Register"/>
+      <Register Name="IDAT" Authority="RW" Address="0x40020b20" Width="32" Description="GPIOx input data Register"/>
+      <Register Name="ODAT" Authority="RW" Address="0x40020b24" Width="32" Description="GPIOx output data Register"/>
+      <Register Name="BSR" Authority="RW" Address="0x40020b28" Width="32" Description="GPIOx Bit Set and Reset Register"/>
+      <Register Name="LCK" Authority="RW" Address="0x40020b2c" Width="32" Description="GPIOx Lock Register"/>
+      <Register Name="AFRL" Authority="RW" Address="0x40020b30" Width="32" Description="GPIOx Alternate Function Select Low Register"/>
+      <Register Name="AFRH" Authority="RW" Address="0x40020b34" Width="32" Description="GPIOx Alternate Function Select High Register"/>
+      <Register Name="TGL" Authority="RW" Address="0x40020b38" Width="32" Description="GPIOx Toggle Register"/>
+      <Register Name="IMK" Authority="RW" Address="0x40020b3c" Width="32" Description="GPIOx Input Mask Register"/>
+      <Register Name="HY" Authority="RW" Address="0x40020b40" Width="32" Description="GPIOx Input Hysteresis Enable Register"/>
+      <Register Name="-   -" Authority="RW" Address="0x40020b44" Width="32" Description=""/>
+      <Register Name="-   -" Authority="RW" Address="0x40020b48" Width="32" Description=""/>
+      <Register Name="DEBEN" Authority="RW" Address="0x40020b4c" Width="32" Description="GPIOx Input Debouce Enable Register"/>
+      <Register Name="AIOEN" Authority="RW" Address="0x40020b50" Width="32" Description="GPIOx Analog IO Function Enable Register"/>
+      <Register Name="PND" Authority="RW" Address="0x40020b54" Width="32" Description="GPIOx Input Interrupt Pending Register"/>
+      <Register Name="PNDCLR" Authority="RW" Address="0x40020b58" Width="32" Description="GPIOx Input Interrupt Pending Clear Register"/>
+      <Register Name="TRG0" Authority="RW" Address="0x40020b5c" Width="32" Description="GPIOx Input Interrupt Trigger Register 0"/>
+      <Register Name="TRG1" Authority="RW" Address="0x40020b60" Width="32" Description="GPIOx Input Interrupt Trigger Register 1"/>
+      <Register Name="OTYPE1" Authority="RW" Address="0x40020b64" Width="32" Description="GPIOx Open-Drain DOWN Register"/>
+      <Register Name="ADCAIOEN" Authority="RW" Address="0x40020b68" Width="32" Description="GPIOx ADKEY Analog IO Function Enable Register"/>
+      <Register Name="TKAIOEN" Authority="RW" Address="0x40020b6c" Width="32" Description="GPIOx TOUCHKEY Analog IO Function Enable Register"/>
+      <Register Name="IEEN" Authority="RW" Address="0x40020b70" Width="32" Description="GPIOx IO FORCE INPUT Enable Register"/>
+      <Register Name="IOFUNCOUTCON0" Authority="RW" Address="0x40020b74" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 0"/>
+      <Register Name="IOFUNCOUTCON1" Authority="RW" Address="0x40020b78" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 1"/>
+      <Register Name="IOFUNCOUTCON2" Authority="RW" Address="0x40020b7c" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 2"/>
+      <Register Name="IOFUNCOUTCON3" Authority="RW" Address="0x40020b80" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 3"/>
+    </Peripheral>
+    <Peripheral Name="GPIOC">
+      <Register Name="MODE" Authority="RW" Address="0x40020c00" Width="32" Description="GPIOx Mode Register"/>
+      <Register Name="OTYPE" Authority="RW" Address="0x40020c04" Width="32" Description="GPIOx Open-Drain UP enable Register"/>
+      <Register Name="OSPEEDL" Authority="RW" Address="0x40020c08" Width="32" Description="GPIOx Output Driving Low Register"/>
+      <Register Name="OSPEEDH" Authority="RW" Address="0x40020c0c" Width="32" Description="GPIOx Output Driving High Register"/>
+      <Register Name="PUPL" Authority="RW" Address="0x40020c10" Width="32" Description="GPIOx Pull-up Low Register"/>
+      <Register Name="PUPH" Authority="RW" Address="0x40020c14" Width="32" Description="GPIOx Pull-up High Register"/>
+      <Register Name="PUDL" Authority="RW" Address="0x40020c18" Width="32" Description="GPIOx Pull-down Low Register"/>
+      <Register Name="PUDH" Authority="RW" Address="0x40020c1c" Width="32" Description="GPIOx Pull-down High Register"/>
+      <Register Name="IDAT" Authority="RW" Address="0x40020c20" Width="32" Description="GPIOx input data Register"/>
+      <Register Name="ODAT" Authority="RW" Address="0x40020c24" Width="32" Description="GPIOx output data Register"/>
+      <Register Name="BSR" Authority="RW" Address="0x40020c28" Width="32" Description="GPIOx Bit Set and Reset Register"/>
+      <Register Name="LCK" Authority="RW" Address="0x40020c2c" Width="32" Description="GPIOx Lock Register"/>
+      <Register Name="AFRL" Authority="RW" Address="0x40020c30" Width="32" Description="GPIOx Alternate Function Select Low Register"/>
+      <Register Name="AFRH" Authority="RW" Address="0x40020c34" Width="32" Description="GPIOx Alternate Function Select High Register"/>
+      <Register Name="TGL" Authority="RW" Address="0x40020c38" Width="32" Description="GPIOx Toggle Register"/>
+      <Register Name="IMK" Authority="RW" Address="0x40020c3c" Width="32" Description="GPIOx Input Mask Register"/>
+      <Register Name="HY" Authority="RW" Address="0x40020c40" Width="32" Description="GPIOx Input Hysteresis Enable Register"/>
+      <Register Name="-   -" Authority="RW" Address="0x40020c44" Width="32" Description=""/>
+      <Register Name="-   -" Authority="RW" Address="0x40020c48" Width="32" Description=""/>
+      <Register Name="DEBEN" Authority="RW" Address="0x40020c4c" Width="32" Description="GPIOx Input Debouce Enable Register"/>
+      <Register Name="AIOEN" Authority="RW" Address="0x40020c50" Width="32" Description="GPIOx Analog IO Function Enable Register"/>
+      <Register Name="PND" Authority="RW" Address="0x40020c54" Width="32" Description="GPIOx Input Interrupt Pending Register"/>
+      <Register Name="PNDCLR" Authority="RW" Address="0x40020c58" Width="32" Description="GPIOx Input Interrupt Pending Clear Register"/>
+      <Register Name="TRG0" Authority="RW" Address="0x40020c5c" Width="32" Description="GPIOx Input Interrupt Trigger Register 0"/>
+      <Register Name="TRG1" Authority="RW" Address="0x40020c60" Width="32" Description="GPIOx Input Interrupt Trigger Register 1"/>
+      <Register Name="OTYPE1" Authority="RW" Address="0x40020c64" Width="32" Description="GPIOx Open-Drain DOWN Register"/>
+      <Register Name="ADCAIOEN" Authority="RW" Address="0x40020c68" Width="32" Description="GPIOx ADKEY Analog IO Function Enable Register"/>
+      <Register Name="TKAIOEN" Authority="RW" Address="0x40020c6c" Width="32" Description="GPIOx TOUCHKEY Analog IO Function Enable Register"/>
+      <Register Name="IEEN" Authority="RW" Address="0x40020c70" Width="32" Description="GPIOx IO FORCE INPUT Enable Register"/>
+      <Register Name="IOFUNCOUTCON0" Authority="RW" Address="0x40020c74" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 0"/>
+      <Register Name="IOFUNCOUTCON1" Authority="RW" Address="0x40020c78" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 1"/>
+      <Register Name="IOFUNCOUTCON2" Authority="RW" Address="0x40020c7c" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 2"/>
+      <Register Name="IOFUNCOUTCON3" Authority="RW" Address="0x40020c80" Width="32" Description="GPIOx IO FUNCTION OUT Control Register 3"/>
+    </Peripheral>
+    <Peripheral Name="SDHOST">
+      <Register Name="CFG SDC" Authority="RW" Address="0x40021400" Width="32" Description="Host Configure Register"/>
+      <Register Name="BAUD" Authority="RW" Address="0x40021404" Width="32" Description="SDC Host Baud Register"/>
+      <Register Name="CPTR" Authority="RW" Address="0x40021408" Width="32" Description="SDC Host CMD Dma Base Address Register"/>
+      <Register Name="DPTR" Authority="RW" Address="0x4002140c" Width="32" Description="SDC Host DATA Dma Base Address Register"/>
+      <Register Name="DCNT" Authority="RW" Address="0x40021410" Width="32" Description="SDC Host DATA Dma Byte Length Register"/>
+      <Register Name="STA SDC" Authority="RW" Address="0x40021414" Width="32" Description="Host CMD and DATA FSM Register"/>
+      <Register Name="CFG1" Authority="RW" Address="0x40021418" Width="32" Description="SDC Host Configure Register 1"/>
+    </Peripheral>
+    <Peripheral Name="IIS0">
+      <Register Name="I2S_CON" Authority="RW" Address="0x40004900" Width="32" Description="I2S configure Register"/>
+      <Register Name="I2S_BITSET" Authority="RW" Address="0x40004904" Width="32" Description="I2S work width set Register"/>
+      <Register Name="I2S_BAUD" Authority="RW" Address="0x40004908" Width="32" Description="I2S work clock divide Register"/>
+      <Register Name="I2S_WSCON" Authority="RW" Address="0x4000490c" Width="32" Description="I2S ws clock divide Register"/>
+      <Register Name="I2S_STA" Authority="RW" Address="0x40004910" Width="32" Description="I2S state Register"/>
+      <Register Name="I2S_DMASTADR0" Authority="RW" Address="0x40004914" Width="32" Description="I2S DMA start address0 Register"/>
+      <Register Name="I2S_DMASTADR1" Authority="RW" Address="0x40004918" Width="32" Description="I2S DMA start address0 Register"/>
+      <Register Name="I2S_DMALEN" Authority="RW" Address="0x4000491c" Width="32" Description="I2S DMA length Register"/>
+    </Peripheral>
+    <Peripheral Name="IIS1">
+      <Register Name="I2S_CON" Authority="RW" Address="0x40004a00" Width="32" Description="I2S configure Register"/>
+      <Register Name="I2S_BITSET" Authority="RW" Address="0x40004a04" Width="32" Description="I2S work width set Register"/>
+      <Register Name="I2S_BAUD" Authority="RW" Address="0x40004a08" Width="32" Description="I2S work clock divide Register"/>
+      <Register Name="I2S_WSCON" Authority="RW" Address="0x40004a0c" Width="32" Description="I2S ws clock divide Register"/>
+      <Register Name="I2S_STA" Authority="RW" Address="0x40004a10" Width="32" Description="I2S state Register"/>
+      <Register Name="I2S_DMASTADR0" Authority="RW" Address="0x40004a14" Width="32" Description="I2S DMA start address0 Register"/>
+      <Register Name="I2S_DMASTADR1" Authority="RW" Address="0x40004a18" Width="32" Description="I2S DMA start address0 Register"/>
+      <Register Name="I2S_DMALEN" Authority="RW" Address="0x40004a1c" Width="32" Description="I2S DMA length Register"/>
+    </Peripheral>
+    <Peripheral Name="PDM">
+      <Register Name="PDM_CON" Authority="RW" Address="0x40004b00" Width="32" Description="PDM Configure Register"/>
+      <Register Name="PDM_DMACON" Authority="RW" Address="0x40004b04" Width="32" Description="PDM DMA Configure Register"/>
+      <Register Name="PDM_DMASTADR0" Authority="RW" Address="0x40004b08" Width="32" Description="PDM DMA start address 0 Register"/>
+      <Register Name="PDM_DMASTADR1" Authority="RW" Address="0x40004b0c" Width="32" Description="PDM DMA start address 1 Register"/>
+      <Register Name="PDM_DMACNT" Authority="RW" Address="0x40004b10" Width="32" Description="PDM DMA counter 0 Register"/>
+      <Register Name="PDM_DMALEN" Authority="RW" Address="0x40004b14" Width="32" Description="PDM DMA start address0 Register"/>
+      <Register Name="PDM_DMASTA" Authority="RW" Address="0x40004b18" Width="32" Description="PDM DMA start address0 Register"/>
+    </Peripheral>
+    <Peripheral Name="LED">
+      <Register Name="LEDCON" Authority="RW" Address="0x40004b50" Width="32" Description="LED control Register"/>
+      <Register Name="LEDTIME" Authority="RW" Address="0x40004b54" Width="32" Description="LED time control Register"/>
+      <Register Name="LEDDATA0" Authority="RW" Address="0x40004b58" Width="32" Description="LED data Register"/>
+      <Register Name="LEDDATA1" Authority="RW" Address="0x40004b5c" Width="32" Description="LED data Register"/>
+      <Register Name="LEDDATA2" Authority="RW" Address="0x40004b60" Width="32" Description="LED data Register"/>
+      <Register Name="LEDDATA3" Authority="RW" Address="0x40004b64" Width="32" Description="LED data Register"/>
+    </Peripheral>    
+    <Peripheral Name="SUPTMR">
+      <Register Name="SUPTMR0_CMP" Authority="RW" Address="0x40015600" Width="32" Description="Supper Timer 0 Comparison Value  Register"/>
+      <Register Name="SUPTMR0_CNT" Authority="RW" Address="0x40015604" Width="32" Description="Supper Timer 0 Counter Register"/>
+      <Register Name="SUPTMR1_CON" Authority="RW" Address="0x40015608" Width="32" Description="Supper Timer 1 Control Register"/>
+      <Register Name="SUPTMR1_PR" Authority="RW" Address="0x4001560c" Width="32" Description="Supper Timer 1 Period Register"/>
+      <Register Name="SUPTMR1_CMP" Authority="RW" Address="0x40015610" Width="32" Description="Supper Timer 1 Comparison Value  Register"/>
+      <Register Name="SUPTMR1_CNT" Authority="RW" Address="0x40015614" Width="32" Description="Supper Timer 1 Counter Register"/>
+      <Register Name="SUPTMR2_CON" Authority="RW" Address="0x40015618" Width="32" Description="Supper Timer 2 Control Register"/>
+      <Register Name="SUPTMR2_PR" Authority="RW" Address="0x4001561c" Width="32" Description="Supper Timer 2 Period Register"/>
+      <Register Name="SUPTMR2_CMP" Authority="RW" Address="0x40015620" Width="32" Description="Supper Timer 2 Comparison Value  Register"/>
+      <Register Name="SUPTMR2_CNT" Authority="RW" Address="0x40015624" Width="32" Description="Supper Timer 2 Counter Register"/>
+      <Register Name="SUPTMR3_CON" Authority="RW" Address="0x40015628" Width="32" Description="Supper Timer 3 Control Register"/>
+      <Register Name="SUPTMR3_PR" Authority="RW" Address="0x4001562c" Width="32" Description="Supper Timer 3 Period Register"/>
+      <Register Name="SUPTMR3_CMP" Authority="RW" Address="0x40015630" Width="32" Description="Supper Timer 3 Comparison Value  Register"/>
+      <Register Name="SUPTMR3_CNT" Authority="RW" Address="0x40015634" Width="32" Description="Supper Timer 3 Counter Register"/>
+      <Register Name="SUPTMR4_CON" Authority="RW" Address="0x40015638" Width="32" Description="Supper Timer 4 Control Register"/>
+      <Register Name="SUPTMR4_PR" Authority="RW" Address="0x4001563c" Width="32" Description="Supper Timer 4 Period Register"/>
+      <Register Name="SUPTMR4_CMP" Authority="RW" Address="0x40015640" Width="32" Description="Supper Timer 4 Comparison Value  Register"/>
+      <Register Name="SUPTMR4_CNT" Authority="RW" Address="0x40015644" Width="32" Description="Supper Timer 4 Counter Register"/>
+      <Register Name="SUPTMR5_CON" Authority="RW" Address="0x40015648" Width="32" Description="Supper Timer 5 Control Register"/>
+      <Register Name="SUPTMR5_PR" Authority="RW" Address="0x4001564c" Width="32" Description="Supper Timer 5 Period Register"/>
+      <Register Name="SUPTMR5_CMP" Authority="RW" Address="0x40015650" Width="32" Description="Supper Timer 5 Comparison Value  Register"/>
+      <Register Name="SUPTMR5_CNT" Authority="RW" Address="0x40015654" Width="32" Description="Supper Timer 5 Counter Register"/>
+    </Peripheral>
+    <Peripheral Name="TIMER_ALL">
+      <Register Name="TMR_ALLCON" Authority="RW" Address="0x40015128" Width="32" Description="Timer ALL Control Register"/>
+    </Peripheral>
+    <Peripheral Name="TIMER0">
+      <Register Name="TMR0_CON" Authority="RW" Address="0x40015100" Width="32" Description="Timer0 Control 0 Register"/>
+      <Register Name="TMR0_EN" Authority="RW" Address="0x40015104" Width="32" Description="Timer0 Enable Register"/>
+      <Register Name="TMR0_IE" Authority="RW" Address="0x40015108" Width="32" Description="Timer0 Interrupt Enable Register"/>
+      <Register Name="TMR0_CNT" Authority="RW" Address="0x4001510c" Width="32" Description="Timer0 Counter Register"/>
+      <Register Name="TMR0_FLG" Authority="RW" Address="0x40015110" Width="32" Description="Timer0 Flag Register"/>
+      <Register Name="TMR0_CLR" Authority="RW" Address="0x40015114" Width="32" Description="Timer0 Counter Clear Register"/>
+      <Register Name="TMR0_CAP1" Authority="RW" Address="0x40015118" Width="32" Description="Timer0 Capture1 Register"/>
+      <Register Name="TMR0_CAP2" Authority="RW" Address="0x4001511c" Width="32" Description="Timer0 Capture2 Register"/>
+      <Register Name="TMR0_CAP3" Authority="RW" Address="0x40015120" Width="32" Description="Timer0 Capture3 Register"/>
+      <Register Name="TMR0_CAP4" Authority="RW" Address="0x40015124" Width="32" Description="Timer0 Capture4 Register"/>
+    </Peripheral>
+    <Peripheral Name="TIMER1">
+      <Register Name="TMR1_CON" Authority="RW" Address="0x40015200" Width="32" Description="Timer1 Control 0 Register"/>
+      <Register Name="TMR1_EN" Authority="RW" Address="0x40015204" Width="32" Description="Timer1 Enable Register"/>
+      <Register Name="TMR1_IE" Authority="RW" Address="0x40015208" Width="32" Description="Timer1 Interrupt Enable Register"/>
+      <Register Name="TMR1_CNT" Authority="RW" Address="0x4001520c" Width="32" Description="Timer1 Counter Register"/>
+      <Register Name="TMR1_CLR" Authority="RW" Address="0x40015210" Width="32" Description="Timer1 Counter Clear Register"/>
+      <Register Name="TMR1_FLG" Authority="RW" Address="0x40015214" Width="32" Description="Timer1 Flag Register"/>
+      <Register Name="TMR1_CAP1" Authority="RW" Address="0x40015218" Width="32" Description="Timer1 Capture1 Register"/>
+      <Register Name="TMR1_CAP2" Authority="RW" Address="0x4001521c" Width="32" Description="Timer1 Capture2 Register"/>
+      <Register Name="TMR1_CAP3" Authority="RW" Address="0x40015220" Width="32" Description="Timer1 Capture3 Register"/>
+      <Register Name="TMR1_CAP4" Authority="RW" Address="0x40015224" Width="32" Description="Timer1 Capture4 Register"/>
+      <Register Name="TMR1_DCTL" Authority="RW" Address="0x40015228" Width="32" Description="Timer1 Dma Control Register"/>
+      <Register Name="TMR1_DADR" Authority="RW" Address="0x4001522c" Width="32" Description="Timer1 Dma Address Register"/>
+      <Register Name="TMR1_DLEN" Authority="RW" Address="0x40015230" Width="32" Description="Timer1 Dma Length Register"/>
+      <Register Name="TMR1_DCNT" Authority="RW" Address="0x40015234" Width="32" Description="Timer1 Dma Counter Register"/>
+      <Register Name="TMR1_IR_BCNT" Authority="RW" Address="0x40015238" Width="32" Description="Timer1 Dma Infrared Bit Counter Register"/>
+    </Peripheral>
+    <Peripheral Name="TIMER2">
+      <Register Name="TMR2_CON" Authority="RW" Address="0x40015300" Width="32" Description="Timer2 Control 0 Register"/>
+      <Register Name="TMR2_EN" Authority="RW" Address="0x40015304" Width="32" Description="Timer2 Enable Register"/>
+      <Register Name="TMR2_IE" Authority="RW" Address="0x40015308" Width="32" Description="Timer2 Interrupt Enable Register"/>
+      <Register Name="TMR2_CNT" Authority="RW" Address="0x4001530c" Width="32" Description="Timer2 Counter Register"/>
+      <Register Name="TMR2_CLR" Authority="RW" Address="0x40015310" Width="32" Description="Timer2 Counter Clear Register"/>
+      <Register Name="TMR2_FLG" Authority="RW" Address="0x40015314" Width="32" Description="Timer2 Flag Register"/>
+      <Register Name="TMR2_CAP1" Authority="RW" Address="0x40015318" Width="32" Description="Timer2 Capture1 Register"/>
+      <Register Name="TMR2_CAP2" Authority="RW" Address="0x4001531c" Width="32" Description="Timer2 Capture2 Register"/>
+      <Register Name="TMR2_CAP3" Authority="RW" Address="0x40015320" Width="32" Description="Timer2 Capture3 Register"/>
+      <Register Name="TMR2_CAP4" Authority="RW" Address="0x40015324" Width="32" Description="Timer2 Capture4 Register"/>
+      <Register Name="TMR2_DCTL" Authority="RW" Address="0x40015328" Width="32" Description="Timer2 Dma Control Register"/>
+      <Register Name="TMR2_DADR" Authority="RW" Address="0x4001532c" Width="32" Description="Timer2 Dma Address Register"/>
+      <Register Name="TMR2_DLEN" Authority="RW" Address="0x40015330" Width="32" Description="Timer2 Dma Length Register"/>
+      <Register Name="TMR2_DCNT" Authority="RW" Address="0x40015334" Width="32" Description="Timer2 Dma Counter Register"/>
+      <Register Name="TMR2_IR_BCNT" Authority="RW" Address="0x40015338" Width="32" Description="Timer2 Dma Infrared Bit Counter Register"/>
+    </Peripheral>
+    <Peripheral Name="TIMER3">
+      <Register Name="TMR3_CON" Authority="RW" Address="0x40015400" Width="32" Description="Timer3 Control 0 Register"/>
+      <Register Name="TMR3_EN" Authority="RW" Address="0x40015404" Width="32" Description="Timer3 Enable Register"/>
+      <Register Name="TMR3_IE" Authority="RW" Address="0x40015408" Width="32" Description="Timer3 Interrupt Enable Register"/>
+      <Register Name="TMR3_CNT" Authority="RW" Address="0x4001540c" Width="32" Description="Timer3 Counter Register"/>
+      <Register Name="TMR3_CLR" Authority="RW" Address="0x40015410" Width="32" Description="Timer3 Counter Clear Register"/>
+      <Register Name="TMR3_FLG" Authority="RW" Address="0x40015414" Width="32" Description="Timer3 Flag Register"/>
+      <Register Name="TMR3_CAP1" Authority="RW" Address="0x40015418" Width="32" Description="Timer3 Capture1 Register"/>
+      <Register Name="TMR3_CAP2" Authority="RW" Address="0x4001541c" Width="32" Description="Timer3 Capture2 Register"/>
+      <Register Name="TMR3_CAP3" Authority="RW" Address="0x40015420" Width="32" Description="Timer3 Capture3 Register"/>
+      <Register Name="TMR3_CAP4" Authority="RW" Address="0x40015424" Width="32" Description="Timer3 Capture4 Register"/>
+    </Peripheral>
+    <Peripheral Name="STMR0">
+      <Register Name="STMR0_CTL" Authority="RW" Address="0x40005b00" Width="32" Description="Simple Timer0 Control Register"/>
+      <Register Name="STMR0_CNT" Authority="RW" Address="0x40005b04" Width="32" Description="Simple Timer0 Counter Register"/>
+      <Register Name="STMR0_PR" Authority="RW" Address="0x40005b08" Width="32" Description="Simple Timer0 Period Register"/>
+      <Register Name="STMR0_PWM" Authority="RW" Address="0x40005b0c" Width="32" Description="Simple Timer0 PWM Register"/>
+    </Peripheral>
+    <Peripheral Name="STMR1">
+      <Register Name="STMR1_CTL" Authority="RW" Address="0x40005b10" Width="32" Description="Simple Timer1 Control Register"/>
+      <Register Name="STMR1_CNT" Authority="RW" Address="0x40005b14" Width="32" Description="Simple Timer1 Counter Register"/>
+      <Register Name="STMR1_PR" Authority="RW" Address="0x40005b18" Width="32" Description="Simple Timer1 Period Register"/>
+      <Register Name="STMR1_PWM" Authority="RW" Address="0x40005b1c" Width="32" Description="Simple Timer1 PWM Register"/>
+    </Peripheral>
+    <Peripheral Name="STMR2">
+      <Register Name="STMR2_CTL" Authority="RW" Address="0x40005b20" Width="32" Description="Simple Timer2 Control Register"/>
+      <Register Name="STMR2_CNT" Authority="RW" Address="0x40005b24" Width="32" Description="Simple Timer2 Counter Register"/>
+      <Register Name="STMR2_PR" Authority="RW" Address="0x40005b28" Width="32" Description="Simple Timer2 Period Register"/>
+      <Register Name="STMR2_PWM" Authority="RW" Address="0x40005b2c" Width="32" Description="Simple Timer2 PWM Register"/>
+    </Peripheral>
+    <Peripheral Name="STMR3">
+      <Register Name="STMR3_CTL" Authority="RW" Address="0x40005b30" Width="32" Description="Simple Timer3 Control Register"/>
+      <Register Name="STMR3_CNT" Authority="RW" Address="0x40005b34" Width="32" Description="Simple Timer3 Counter Register"/>
+      <Register Name="STMR3_PR" Authority="RW" Address="0x40005b38" Width="32" Description="Simple Timer3 Period Register"/>
+      <Register Name="STMR3_PWM" Authority="RW" Address="0x40005b3c" Width="32" Description="Simple Timer3 PWM Register"/>
+    </Peripheral>
+    <Peripheral Name="ADKEY0">
+      <Register Name="ADKEY_CON" Authority="RW" Address="0x4001a000" Width="32" Description="ADKEY Configure Register"/>
+      <Register Name="ADKEY_DATA" Authority="RW" Address="0x4001a008" Width="32" Description="ADKEY data Register"/>
+    </Peripheral>
+    <Peripheral Name="ADKEY1">
+      <Register Name="ADKEY_CON" Authority="RW" Address="0x4001a00c" Width="32" Description="ADKEY Configure Register"/>
+      <Register Name="ADKEY_DATA" Authority="RW" Address="0x4001a014" Width="32" Description="ADKEY data Register"/>
+    </Peripheral>
+    <Peripheral Name="SPI0">
+      <Register Name="CON0" Authority="RW" Address="0x40004400" Width="32" Description=""/>
+      <Register Name="CON1" Authority="RW" Address="0x40004404" Width="32" Description=""/>
+      <Register Name="CMD_DATA" Authority="RW" Address="0x40004408" Width="32" Description=""/>
+      <Register Name="BAUD" Authority="RW" Address="0x4000440c" Width="32" Description=""/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004410" Width="32" Description=""/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x40004414" Width="32" Description=""/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004418" Width="32" Description=""/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x4000441c" Width="32" Description=""/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004420" Width="32" Description=""/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004424" Width="32" Description=""/>
+      <Register Name="STA SPI" Authority="RW" Address="0x40004428" Width="32" Description=""/>
+      <Register Name="SLAVESTA" Authority="RW" Address="0x4000442c" Width="32" Description=""/>
+      <Register Name="DLY SPI" Authority="RW" Address="0x40004430" Width="32" Description=""/>
+    </Peripheral>
+    <Peripheral Name="SPI1">
+      <Register Name="CON0" Authority="RW" Address="0x40004500" Width="32" Description=""/>
+      <Register Name="CON1" Authority="RW" Address="0x40004504" Width="32" Description=""/>
+      <Register Name="CMD_DATA" Authority="RW" Address="0x40004508" Width="32" Description=""/>
+      <Register Name="BAUD" Authority="RW" Address="0x4000450c" Width="32" Description=""/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004510" Width="32" Description=""/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x40004514" Width="32" Description=""/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004518" Width="32" Description=""/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x4000451c" Width="32" Description=""/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004520" Width="32" Description=""/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004524" Width="32" Description=""/>
+      <Register Name="STA SPI" Authority="RW" Address="0x40004528" Width="32" Description=""/>
+      <Register Name="SLAVESTA" Authority="RW" Address="0x4000452c" Width="32" Description=""/>
+      <Register Name="DLY SPI" Authority="RW" Address="0x40004530" Width="32" Description=""/>
+    </Peripheral>
+    <Peripheral Name="SPI2">
+      <Register Name="CON0" Authority="RW" Address="0x40004600" Width="32" Description=""/>
+      <Register Name="CON1" Authority="RW" Address="0x40004604" Width="32" Description=""/>
+      <Register Name="CMD_DATA" Authority="RW" Address="0x40004608" Width="32" Description=""/>
+      <Register Name="BAUD" Authority="RW" Address="0x4000460c" Width="32" Description=""/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004610" Width="32" Description=""/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x40004614" Width="32" Description=""/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004618" Width="32" Description=""/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x4000461c" Width="32" Description=""/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004620" Width="32" Description=""/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004624" Width="32" Description=""/>
+      <Register Name="STA SPI" Authority="RW" Address="0x40004628" Width="32" Description=""/>
+      <Register Name="SLAVESTA" Authority="RW" Address="0x4000462c" Width="32" Description=""/>
+      <Register Name="DLY SPI" Authority="RW" Address="0x40004630" Width="32" Description=""/>
+    </Peripheral>
+    <Peripheral Name="IIC1">
+      <Register Name="CON0" Authority="RW" Address="0x40004500" Width="32" Description=""/>
+      <Register Name="CON1" Authority="RW" Address="0x40004504" Width="32" Description=""/>
+      <Register Name="CMD_DATA" Authority="RW" Address="0x40004508" Width="32" Description=""/>
+      <Register Name="BAUD" Authority="RW" Address="0x4000450c" Width="32" Description=""/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004510" Width="32" Description=""/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x40004514" Width="32" Description=""/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004518" Width="32" Description=""/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x4000451c" Width="32" Description=""/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004520" Width="32" Description=""/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004524" Width="32" Description=""/>
+      <Register Name="STA SPI" Authority="RW" Address="0x40004528" Width="32" Description=""/>
+      <Register Name="SLAVESTA" Authority="RW" Address="0x4000452c" Width="32" Description=""/>
+      <Register Name="DLY SPI" Authority="RW" Address="0x40004530" Width="32" Description=""/>
+    </Peripheral>
+    <Peripheral Name="IIC2">
+      <Register Name="CON0" Authority="RW" Address="0x40004600" Width="32" Description=""/>
+      <Register Name="CON1" Authority="RW" Address="0x40004604" Width="32" Description=""/>
+      <Register Name="CMD_DATA" Authority="RW" Address="0x40004608" Width="32" Description=""/>
+      <Register Name="BAUD" Authority="RW" Address="0x4000460c" Width="32" Description=""/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004610" Width="32" Description=""/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x40004614" Width="32" Description=""/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004618" Width="32" Description=""/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x4000461c" Width="32" Description=""/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004620" Width="32" Description=""/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004624" Width="32" Description=""/>
+      <Register Name="STA SPI" Authority="RW" Address="0x40004628" Width="32" Description=""/>
+      <Register Name="SLAVESTA" Authority="RW" Address="0x4000462c" Width="32" Description=""/>
+      <Register Name="DLY SPI" Authority="RW" Address="0x40004630" Width="32" Description=""/>
+    </Peripheral>
+    <Peripheral Name="SPI5">
+      <Register Name="SPI5_CON" Authority="RW" Address="0x40004b38" Width="32" Description="SPI5 CONTROL Register"/>
+      <Register Name="SPI5_BAUD" Authority="RW" Address="0x40004b3c" Width="32" Description="SPI5 BAUD Register"/>
+      <Register Name="SPI5_DATA" Authority="RW" Address="0x40004b40" Width="32" Description="SPI5 DATA Register"/>
+    </Peripheral>
+    <Peripheral Name="SPI6">
+      <Register Name="SPI6_CON" Authority="RW" Address="0x40004b44" Width="32" Description="SPI6 CONTROL Register"/>
+      <Register Name="SPI6_BAUD" Authority="RW" Address="0x40004b48" Width="32" Description="SPI6 BAUD Register"/>
+      <Register Name="SPI6_DATA" Authority="RW" Address="0x40004b4c" Width="32" Description="SPI6 DATA Register"/>
+    </Peripheral>
+    <Peripheral Name="UART0">
+      <Register Name="CON" Authority="RW" Address="0x40004000" Width="32" Description="UART control register"/>
+      <Register Name="BAUD" Authority="RW" Address="0x40004004" Width="32" Description="UART baud register"/>
+      <Register Name="DATA" Authority="RW" Address="0x40004008" Width="32" Description="UART data register"/>
+      <Register Name="STA" Authority="RW" Address="0x4000400c" Width="32" Description="UART state register"/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004010" Width="32" Description="UART TX DMA start addr register"/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004014" Width="32" Description="UART RX DMA start addr register"/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004018" Width="32" Description="UART TX DMA length register"/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x4000401c" Width="32" Description="UART RX DMA length register"/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004020" Width="32" Description="UART TX DMA counter register"/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x40004024" Width="32" Description="UART RX DMA counter register"/>
+      <Register Name="DMACON" Authority="RW" Address="0x40004028" Width="32" Description="UART DMA control register"/>
+      <Register Name="DMASTA" Authority="RW" Address="0x4000402c" Width="32" Description="UART DMA state register"/>
+      <Register Name="RS485_CON" Authority="RW" Address="0x40004030" Width="32" Description="UART RS485 mode control register"/>
+      <Register Name="RS485_DET" Authority="RW" Address="0x40004034" Width="32" Description="UART RS485 mode time control register"/>
+      <Register Name="RS485_TAT" Authority="RW" Address="0x40004038" Width="32" Description="UART RS485 mode time control register"/>
+      <Register Name="TOCON" Authority="RW" Address="0x4000403c" Width="32" Description="UART timeout control register"/>
+    </Peripheral>
+    <Peripheral Name="UART1">
+      <Register Name="CON" Authority="RW" Address="0x40004100" Width="32" Description="UART control register"/>
+      <Register Name="BAUD" Authority="RW" Address="0x40004104" Width="32" Description="UART baud register"/>
+      <Register Name="DATA" Authority="RW" Address="0x40004108" Width="32" Description="UART data register"/>
+      <Register Name="STA" Authority="RW" Address="0x4000410c" Width="32" Description="UART state register"/>
+      <Register Name="TSTADR" Authority="RW" Address="0x40004110" Width="32" Description="UART TX DMA start addr register"/>
+      <Register Name="RSTADR" Authority="RW" Address="0x40004114" Width="32" Description="UART RX DMA start addr register"/>
+      <Register Name="TDMALEN" Authority="RW" Address="0x40004118" Width="32" Description="UART TX DMA length register"/>
+      <Register Name="RDMALEN" Authority="RW" Address="0x4000411c" Width="32" Description="UART RX DMA length register"/>
+      <Register Name="TDMACNT" Authority="RW" Address="0x40004120" Width="32" Description="UART TX DMA counter register"/>
+      <Register Name="RDMACNT" Authority="RW" Address="0x40004124" Width="32" Description="UART RX DMA counter register"/>
+      <Register Name="DMACON" Authority="RW" Address="0x40004128" Width="32" Description="UART DMA control register"/>
+      <Register Name="DMASTA" Authority="RW" Address="0x4000412c" Width="32" Description="UART DMA state register"/>
+      <Register Name="RS485_CON" Authority="RW" Address="0x40004130" Width="32" Description="UART RS485 mode control register"/>
+      <Register Name="RS485_DET" Authority="RW" Address="0x40004134" Width="32" Description="UART RS485 mode time control register"/>
+      <Register Name="RS485_TAT" Authority="RW" Address="0x40004138" Width="32" Description="UART RS485 mode time control register"/>
+      <Register Name="TOCON" Authority="RW" Address="0x4000413c" Width="32" Description="UART timeout control register"/>
+    </Peripheral>
+    <Peripheral Name="UART4">
+      <Register Name="CON" Authority="RW" Address="0x40004b20" Width="32" Description="UART CONTROL Register"/>
+      <Register Name="BAUD" Authority="RW" Address="0x40004b24" Width="32" Description="UART BAUD Register"/>
+      <Register Name="DATA" Authority="RW" Address="0x40004b28" Width="32" Description="UART DATA Register"/>
+    </Peripheral>
+    <Peripheral Name="UART5">
+      <Register Name="CON" Authority="RW" Address="0x40004b2c" Width="32" Description="UART CONTROL Register"/>
+      <Register Name="BAUD" Authority="RW" Address="0x40004b30" Width="32" Description="UART BAUD Register"/>
+      <Register Name="DATA" Authority="RW" Address="0x40004b34" Width="32" Description="UART DATA Register"/>
+    </Peripheral>
+    <Peripheral Name="M2M_DMA0">
+      <Register Name="DMA0_CON" Authority="RW" Address="0x40021200" Width="32" Description="DMA0 config"/>
+      <Register Name="DMA0_SAIE" Authority="RW" Address="0x40021204" Width="32" Description="DMA0 state and interrupt enable"/>
+      <Register Name="DMA0_DATA" Authority="RW" Address="0x40021208" Width="32" Description="DMA0 data write to memory"/>
+      <Register Name="DMA0_SADR" Authority="RW" Address="0x4002120c" Width="32" Description="DMA0 source start address"/>
+      <Register Name="DMA0_TADR" Authority="RW" Address="0x40021210" Width="32" Description="DMA0 target start address"/>
+      <Register Name="DMA0_DLEN" Authority="RW" Address="0x40021214" Width="32" Description="DMA0 data byte length"/>
+    </Peripheral>
+    <Peripheral Name="M2M_DMA1">
+      <Register Name="DMA1_CON" Authority="RW" Address="0x40021218" Width="32" Description="DMA1 config"/>
+      <Register Name="DMA1_SAIE" Authority="RW" Address="0x4002121c" Width="32" Description="DMA1 state and interrupt enable"/>
+      <Register Name="DMA1_DATA" Authority="RW" Address="0x40021220" Width="32" Description="DMA1 data write to memory"/>
+      <Register Name="DMA1_SADR" Authority="RW" Address="0x40021224" Width="32" Description="DMA1 source start address"/>
+      <Register Name="DMA1_TADR" Authority="RW" Address="0x40021228" Width="32" Description="DMA1 target start address"/>
+      <Register Name="DMA1_DLEN" Authority="RW" Address="0x4002122c" Width="32" Description="DMA1 data byte length"/>
+    </Peripheral>
+    <Peripheral Name="CRC">
+      <Register Name="CRC_CFG" Authority="RW" Address="0x40017000" Width="32" Description="CRC Configure Register"/>
+      <Register Name="CRC_INIT" Authority="RW" Address="0x40017004" Width="32" Description="CRC Initial Register"/>
+      <Register Name="CRC_INV" Authority="RW" Address="0x40017008" Width="32" Description="CRC Inv Register"/>
+      <Register Name="CRC_POLY" Authority="RW" Address="0x4001700c" Width="32" Description="CRC Poly Register"/>
+      <Register Name="CRC_KST" Authority="RW" Address="0x40017010" Width="32" Description="CRC Kick Start Register"/>
+      <Register Name="CRC_STA" Authority="RW" Address="0x40017014" Width="32" Description="CRC Status Register"/>
+      <Register Name="-   -" Authority="RW" Address="0x40017018" Width="32" Description=""/>
+      <Register Name="DMA_ADDR" Authority="RW" Address="0x4001701c" Width="32" Description="CRC DMA Start Address Register"/>
+      <Register Name="DMA_LEN" Authority="RW" Address="0x40017020" Width="32" Description="CRC DMA Length Register"/>
+      <Register Name="CRC_OUT" Authority="RW" Address="0x40017024" Width="32" Description="CRC Result Data Register"/>
+    </Peripheral>
+    <Peripheral Name="SYS_AES">
+      <Register Name="KEY0" Authority="RW" Address="0x40012000" Width="32" Description="Key bit31~bit0 Register"/>
+      <Register Name="KEY1" Authority="RW" Address="0x40012004" Width="32" Description="Key bit63~bit32 Register"/>
+      <Register Name="KEY2" Authority="RW" Address="0x40012008" Width="32" Description="Key bit95~bit64 Register"/>
+      <Register Name="KEY3" Authority="RW" Address="0x4001200c" Width="32" Description="Key bit127~bit96 bits Register"/>
+      <Register Name="KEY4" Authority="RW" Address="0x40012010" Width="32" Description="Key bit159~bit128 Register"/>
+      <Register Name="KEY5" Authority="RW" Address="0x40012014" Width="32" Description="Key bit191~bit160 Register"/>
+      <Register Name="KEY6" Authority="RW" Address="0x40012018" Width="32" Description="Key bit223~bit192 Register"/>
+      <Register Name="KEY7" Authority="RW" Address="0x4001201c" Width="32" Description="Key bit255~bit224 bits Register"/>
+      <Register Name="SADDR" Authority="RW" Address="0x40012020" Width="32" Description="Source Address Register"/>
+      <Register Name="DADDR" Authority="RW" Address="0x40012024" Width="32" Description="Destination Address Register"/>
+      <Register Name="BLOCK_NUM" Authority="RW" Address="0x40012028" Width="32" Description="Block number Register"/>
+      <Register Name="AES_CTRL" Authority="RW" Address="0x40012040" Width="32" Description="AES control Register"/>
+      <Register Name="AES_STAT" Authority="RW" Address="0x40012044" Width="32" Description="AES status Register"/>
+    </Peripheral>
+    <Peripheral Name="TK">
+      <Register Name="TKCONVCON" Authority="RW" Address="0x40006000" Width="32" Description="TouchKey Convert Configure Register"/>
+      <Register Name="TKCSCKDIV0" Authority="RW" Address="0x40006004" Width="32" Description="TouchKey CS Clock Div Register 0"/>
+      <Register Name="TKCSCKDIV1" Authority="RW" Address="0x40006008" Width="32" Description="TouchKey CS Clock Div Register 1"/>
+      <Register Name="TKANACON" Authority="RW" Address="0x4000600c" Width="32" Description="TouchKey Analog Config Register"/>
+      <Register Name="TKCHCON" Authority="RW" Address="0x40006010" Width="32" Description="TouchKey Channel Config Register"/>
+      <Register Name="TKCON0" Authority="RW" Address="0x40006014" Width="32" Description="TouchKey Config Register 0"/>
+      <Register Name="TKCON1" Authority="RW" Address="0x40006018" Width="32" Description="TouchKey Config Register 1"/>
+      <Register Name="TKCON2" Authority="RW" Address="0x4000601c" Width="32" Description="TouchKey Config Register 2"/>
+      <Register Name="TKPN16INIT" Authority="RW" Address="0x40006020" Width="32" Description="TouchKey PN16 for SSC Initial Value Register"/>
+      <Register Name="TKCONVDAT" Authority="RW" Address="0x40006024" Width="32" Description="TouchKey Convert Data Register"/>
+      <Register Name="TKDMAADDR" Authority="RW" Address="0x40006028" Width="32" Description="TouchKey DMA Start Address Register"/>
+    </Peripheral>
+    <Peripheral Name="SYSMNT">
+      <Register Name="CTRL" Authority="RW" Address="0x40021300" Width="32" Description="System monitor control Register"/>
+      <Register Name="PND" Authority="RW" Address="0x40021304" Width="32" Description="System monitor pending Register"/>
+      <Register Name="CLR" Authority="RW" Address="0x40021308" Width="32" Description="System monitor clear Register"/>
+      <Register Name="RD" Authority="RW" Address="0x4002130c" Width="32" Description="System monitor read flag Register"/>
+      <Register Name="WR" Authority="RW" Address="0x40021310" Width="32" Description="System monitor write flag Register"/>
+      <Register Name="CPU_PC0" Authority="RW" Address="0x40021314" Width="32" Description="CPU current PC register"/>
+      <Register Name="CPU_PC1" Authority="RW" Address="0x40021318" Width="32" Description="CPU excute PC register when error"/>
+      <Register Name="CPU_PC2" Authority="RW" Address="0x4002131c" Width="32" Description="CPU pre1-excute PC register when error"/>
+      <Register Name="CPU_PC3" Authority="RW" Address="0x40021320" Width="32" Description="CPU pre2-excute PC register when error"/>
+      <Register Name="CH_LMT_L" Authority="RW" Address="0x40021324" Width="32" Description="Channel limit low register"/>
+      <Register Name="CH_LMT_H" Authority="RW" Address="0x40021328" Width="32" Description="Channel limit high register"/>
+      <Register Name="CH_ERR_ADR" Authority="RW" Address="0x4002132c" Width="32" Description="Channel acess error address register"/>
+    </Peripheral>
+    <Peripheral Name="WDT">
+      <Register Name="WDTCON" Authority="RW" Address="0x40015000" Width="32" Description=""/>
+      <Register Name="WDTKEY" Authority="RW" Address="0x40015004" Width="32" Description=""/>
+    </Peripheral>
+  </config>
+</com.csky.cds.peripheral>

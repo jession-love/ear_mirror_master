@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\fpv_app_umac4.cdkws">
+  <int Value="6" Name="m_selectedTab"/>
+  <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\fpv_app_umac4.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\app\i4s\i4sgsensor.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="5" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\project_config.h" Name="FileName"/>
+      <int Value="93" Name="FirstVisibleLine"/>
+      <int Value="106" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\main.c" Name="FileName"/>
+      <int Value="135" Name="FirstVisibleLine"/>
+      <int Value="144" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\sdk\lib\video\dvp\cmos_sensor\csi.c" Name="FileName"/>
+      <int Value="522" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\sys_config.h" Name="FileName"/>
+      <int Value="180" Name="FirstVisibleLine"/>
+      <int Value="192" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\app\i4s\i4s_mcu\icb-4u27.c" Name="FileName"/>
+      <int Value="77" Name="FirstVisibleLine"/>
+      <int Value="92" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\project\app\i4s\i4sgsensor.c" Name="FileName"/>
+      <int Value="236" Name="FirstVisibleLine"/>
+      <int Value="254" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-test\hgSDK-v2.1.0.7-18424\hgSDK-v2.1.0.7-18424\sdk\include\hal\gpio.h" Name="FileName"/>
+      <int Value="114" Name="FirstVisibleLine"/>
+      <int Value="125" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

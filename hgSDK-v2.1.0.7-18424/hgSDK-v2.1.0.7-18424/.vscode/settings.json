@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "i4sgsensor.h": "c",
+        "hgdvp.h": "c",
+        "g_sensor.h": "c"
+    }
+}
