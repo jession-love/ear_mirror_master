@@ -78,10 +78,14 @@ int32 sys_wifi_event(uint8 ifidx, uint16 evt, uint32 param1, uint32 param2)
             os_printf("inteface%d: start connecting ...\r\n", ifidx);
             break;
         case IEEE80211_EVENT_CONNECTED:
-            os_printf("inteface%d: sta "MACSTR" connected\r\n", ifidx, MAC2STR((uint8 *)param1));
+            os_printf("inteface%d: sta "MACSTR" cj connected\r\n", ifidx, MAC2STR((uint8 *)param1));
+            extern int i4s_connected(int connect);
+	        i4s_connected(1);	
             break;
         case IEEE80211_EVENT_DISCONNECTED:
             os_printf("inteface%d: sta "MACSTR" disconnected\r\n", ifidx, MAC2STR((uint8 *)param1));
+            extern int i4s_connected(int connect);
+	        i4s_connected(0);
             break;
         case IEEE80211_EVENT_RX_MGMT_FRAME:
             //os_printf("inteface%d rx mgmt frame, data:%x, len:%d\r\n", ifidx, param1, param2);
@@ -247,6 +251,7 @@ void user_sta_add(char *addr){
 	connect_led++;
 	memcpy(mac_adr,addr,6);	
 	printf("user_sta_add:%x %x %x %x %x %x\r\n",addr[0],addr[1],addr[2],addr[3],addr[4],addr[5]);
+    printf("1111111111jj111111");
     i4s_handle_event(OP_WIFI_CONECTED);
 	extern int i4s_connected(int connect);
 	i4s_connected(1);	
@@ -269,6 +274,7 @@ sysevt_hdl_res sysevt_wifi_event(uint32 event_id, uint32 data, uint32 priv){
             user_sta_del(addr);
             break;
         case SYSEVT_WIFI_CONNECTTED:
+            printf("222222jjj2222222222");
             user_sta_add(addr);
             break;
         default:

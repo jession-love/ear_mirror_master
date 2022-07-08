@@ -835,7 +835,7 @@ void video_add_pkt_header(TV_HDR_PARAM_PTR param)
 	elem_tvhdr->isEof = param->is_eof;
 	elem_tvhdr->frameCnt = param->frame_cnt;
 	elem_tvhdr->seq = tseq++;
-	//chengjiegai
+	//chengjiegai-原本有2个!!,不知道有啥Bug不
 	elem_tvhdr->gsensorSupport = !(i4s_get_capacity()&CAMCAP_GSENSOR);
 	elem_tvhdr->gsensorData = gSensor;
 	//elem_tvhdr->gsensorData = 17;

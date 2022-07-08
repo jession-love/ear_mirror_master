@@ -88,7 +88,7 @@ static void _ADC_battey_task(void *arg)
 				//printf("-,- - -! vol_f:%2.6f\r\n",vol_f);
 				    if(gpio_get_val(GPIO_DET_CHARGE)==1)
 					{
-						vol_f = vol_f-0.26;
+						vol_f = vol_f;
 					} 
 				printf("12vol_f:%2.6f,vol:%d\r\n",vol_f,vol);	
 
@@ -171,7 +171,7 @@ static void _mcu_task(void *arg)
 		
 		os_sleep_ms(200);
 	 } */
-	 os_sleep_ms(2000);
+	 os_sleep_ms(200);
 	while(1){
 		
 		if(cnt >= 30){
@@ -202,6 +202,7 @@ static void _mcu_task(void *arg)
 		if(red_led_flag==1&&ban_continue_flag==0)
 		{
 			gpio_set_val(GPIO_LED_RED,1);
+			gpio_set_val(GPIO_LED_BLUE,0);
 			ban_continue_flag=1;
 
 		}else if(red_led_flag==0&&ban_continue_flag==1)
@@ -210,10 +211,11 @@ static void _mcu_task(void *arg)
 			ban_continue_flag=0;
 		}
 		
-		if(connect_flag&&red_led_flag!=1){
+		if(connect_flag&&(red_led_flag!=1)){
 			gpio_set_val(GPIO_LED_BLUE,1);
 			time_10_min=0;
-		}else{
+		}else if(red_led_flag!=1)
+		{
 			if(time_ctr >= 10&&red_led_flag!=1){
 				idx ^=0x01;
 				gpio_set_val(GPIO_LED_BLUE, idx);
@@ -256,6 +258,7 @@ int i4s_mcu_init(void)
 int i4s_connected(int connect)
 {
 	connect_flag = connect;
+	os_printf("i4s_connected-=-=-=-=-=-=-=-=");
 
 	return 0;
 }

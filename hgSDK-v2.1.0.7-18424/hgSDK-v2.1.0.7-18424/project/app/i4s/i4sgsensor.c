@@ -272,7 +272,7 @@ static void _get_xyz(void *param)
 #endif
 
 	gsonsor_conv2i4s(X, Y, Z);
-	 os_sleep_ms(100);
+	 os_sleep_ms(10);
 
 	}//while end
 	 
