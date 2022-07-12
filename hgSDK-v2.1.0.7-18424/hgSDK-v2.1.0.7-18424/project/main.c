@@ -492,7 +492,7 @@ __init static void app_network_init()
      /* void alk_net_data_init();
       alk_net_data_init(); */
     //careskin_net_data_init();
-    i4s_gsensor_init();
+   // i4s_gsensor_init();
     user_protocol();
 #endif
 

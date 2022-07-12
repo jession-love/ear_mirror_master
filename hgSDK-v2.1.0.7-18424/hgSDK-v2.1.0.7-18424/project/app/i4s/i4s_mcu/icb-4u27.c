@@ -38,7 +38,9 @@ struct hgadc_v0* global_hgadc_test;
 static float ad_pwr1 = 100;
 static float ad_pwr2 = 100;
 static volatile uint8_t red_led_flag =0;
+static volatile uint8_t low_vol_flag=0;
 static uint8_t ban_continue_flag = 0;
+static float change_volf=0;
 
 
 static void i4s_gpio_init(void)
@@ -73,6 +75,7 @@ static void _ADC_battey_task(void *arg)
 	    adc_add_channel(global_hgadc_test, PA_0);
 		int vol = 0;
 	    float vol_f = 0;
+		float vol_f1 = -1;
 		int vol_count = 0;
 		float vol_sum[5]={0};
 		 os_sleep_ms(3000);
@@ -86,13 +89,28 @@ static void _ADC_battey_task(void *arg)
 			//	printf("vol_f:%2.6f,vol:%d\r\n",vol_f,vol);
 				  
 				//printf("-,- - -! vol_f:%2.6f\r\n",vol_f);
-				    if(gpio_get_val(GPIO_DET_CHARGE)==1)
+				    if(gpio_get_val(GPIO_DET_CHARGE)==1&&(vol_f1<0))
 					{
-						vol_f = vol_f;
+						vol_f = vol_f-0.3;
 					} 
+                  //防止充电电压变化
+				  change_volf=vol_f-vol_f1;
+				 // printf("shang dian le is %2.6f ",change_volf);
+				  if((change_volf>0.15)&&(change_volf<1.5))
+				  {
+					vol_f=vol_f-change_volf;
+					//printf("shang dian le ");
+				  }
+                  vol_f1=vol_f;
 				printf("12vol_f:%2.6f,vol:%d\r\n",vol_f,vol);	
-
-				vol_f = 100-1000*(4.2-vol_f)/8;	//4.2满电，3.4空电为基准
+                if(vol_f>4.05)
+				{
+					vol_f=100;
+				}
+				else
+				{
+				vol_f = 100-1000*(4.1-vol_f)/8;	//4.2满电，3.4空电为基准
+				}
 				vol_sum[vol_count]=vol_f;
 				vol_count++;
 				if(vol_count==5)
@@ -107,7 +125,7 @@ static void _ADC_battey_task(void *arg)
 					} */
 					printf("ad_pwr1:%2.6f\r\n",ad_pwr1);
 					vol_count=0;
-					if(ad_pwr2>ad_pwr1)
+					if((ad_pwr2>ad_pwr1)&&(red_led_flag==0))
 					{
 						ad_pwr2=ad_pwr1;
 						printf("now battey is ad_pwr2:%2.6f\r\n",ad_pwr2);
@@ -120,7 +138,41 @@ static void _ADC_battey_task(void *arg)
 							ad_pwr2=90;
 						}
 						
-						set_battey_fun(ad_pwr2);	
+						set_battey_fun(ad_pwr2);
+						if(ad_pwr2<=10)
+						{
+							low_vol_flag=1;		
+						}else{
+							low_vol_flag=0;
+						}
+						if(ad_pwr2<0)
+						{
+						    os_printf("Power off\r\n");	//	
+							gpio_set_val(GPIO_LED_BLUE,0);
+							gpio_set_val(GPIO_CTRL_MCU,0);
+							gpio_set_val(GPIO_LED_WHITE,0);
+							os_printf("Power finish\r\n");
+						}		
+					}else if((ad_pwr2<ad_pwr1)&&(red_led_flag==1))
+					{
+						ad_pwr2=ad_pwr1;
+						printf("now battey is ad_pwr2:%2.6f\r\n",ad_pwr2);
+						if(ad_pwr2<0)
+						{
+						    ad_pwr2=0;
+						}	
+						if((ad_pwr2>90)&&(ad_pwr2<100))
+						{
+							ad_pwr2=90;
+						}
+						if(ad_pwr2>100)
+						{
+							ad_pwr2==100;
+						}
+						
+						set_battey_fun(ad_pwr2);
+						
+						
 					}
 					
 				}
@@ -174,7 +226,7 @@ static void _mcu_task(void *arg)
 	 os_sleep_ms(200);
 	while(1){
 		
-		if(cnt >= 30){
+		if(cnt >= 25){
 			os_printf("Power off\r\n");	//	
 			gpio_set_val(GPIO_LED_BLUE,0);
 			gpio_set_val(GPIO_CTRL_MCU,0);
@@ -210,11 +262,20 @@ static void _mcu_task(void *arg)
 			gpio_set_val(GPIO_LED_RED,0);
 			ban_continue_flag=0;
 		}
-		
-		if(connect_flag&&(red_led_flag!=1)){
+		//红灯闪烁
+		if(time_ctr >= 10&&low_vol_flag&&(red_led_flag==0))
+		{
+			idx ^=0x01;
+			gpio_set_val(GPIO_LED_RED, idx);
+			gpio_set_val(GPIO_LED_BLUE,0);
+			time_ctr = 0;
+		}
+      
+		//蓝灯闪烁
+		if(connect_flag&&(red_led_flag!=1)&&(low_vol_flag==0)&&(low_vol_flag!=1)){
 			gpio_set_val(GPIO_LED_BLUE,1);
 			time_10_min=0;
-		}else if(red_led_flag!=1)
+		}else if(red_led_flag!=1&&(low_vol_flag==0)&&(low_vol_flag!=1))
 		{
 			if(time_ctr >= 10&&red_led_flag!=1){
 				idx ^=0x01;
@@ -241,11 +302,31 @@ int i4s_mcu_init(void)
 {
 	void *thread;
 	void *thread1;
+	uint8_t time_num=0;
 
 	i4s_gpio_init();
 	os_printf("----------i4s mcu init--------\r\n");
-	
-	gpio_set_val(GPIO_CTRL_MCU,1);
+	while(1)
+	{
+		if(gpio_get_val(GPIO_DET_CHARGE)==1)
+		{
+			gpio_set_val(GPIO_CTRL_MCU,1);
+			break;
+		}
+	 if(gpio_get_val(GPIO_PWR_KEY))
+	 {
+		time_num++;
+		os_printf("power key:%d\r\n", time_num);	
+	 }
+	 if(time_num>6)
+	 {
+		gpio_set_val(GPIO_CTRL_MCU,1);
+		os_printf(" kai ji \r\n");
+		break;
+	 }
+	 os_sleep_ms(100);
+	}
+	//gpio_set_val(GPIO_CTRL_MCU,1);
 	gpio_set_val(GPIO_LED_WHITE,1);
 	gpio_set_val(GPIO_LED_RED,0);
 	//这个函数类似于开线程
