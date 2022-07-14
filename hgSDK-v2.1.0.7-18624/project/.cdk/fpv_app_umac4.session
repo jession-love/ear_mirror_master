@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="D:\Code_management\Taixin-wei\hgSDK-v2.1.0.7-18624\hgSDK-v2.1.0.7-18624\project\fpv_app_umac4.cdkws">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="D:\Code_management\Taixin-wei\hgSDK-v2.1.0.7-18624\hgSDK-v2.1.0.7-18624\project\fpv_app_umac4.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="D:\Code_management\Taixin-wei\hgSDK-v2.1.0.7-18624\hgSDK-v2.1.0.7-18624\project\main.c" Name="FileName"/>
+      <int Value="34" Name="FirstVisibleLine"/>
+      <int Value="46" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>
