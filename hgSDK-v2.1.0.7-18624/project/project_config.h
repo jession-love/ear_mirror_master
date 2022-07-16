@@ -57,7 +57,7 @@
  * bit 18 : HT MCS6
  * bit 19 : HT MCS7
  */
-#define WIFI_TX_SUPP_RATE               0x0FFFFF    //TX速率支持，每1bit对应一种速率
+#define WIFI_TX_SUPP_RATE               0x000080//0x0FFFFF    //TX速率支持，每1bit对应一种速率
 #define WIFI_MAX_STA_CNT                8           //最多连接sta的数量。有效值为1~8
 #define WIFI_MULICAST_RETRY             0           //组播帧传输次数
 #define WIFI_ACS_CHAN_LISTS             0x03FF      //要扫描的信道。每1bit对应1个信道(bit 0~11 -> chan 1~12)

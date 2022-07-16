@@ -185,12 +185,14 @@ volatile uint16_t lseqNo = 0;
 extern volatile struct list_head *usr_p;			//应用的节点指针
 extern volatile struct list_head free_tab;			//空闲列表，存放空间节点
 extern struct dvp_device *dvp_test;
+static int flag=0;
 
 //callback
 op_cb op_callback; /*operation callback*/
 int (*led_callback)(struct cProLed*)  = NULL;
 int (*common_callback)(uint8_t *, uint16_t *)  = NULL;
 int op_sock=0;
+static int offset = 0;
 
 static int battey = 100;
 
@@ -415,7 +417,7 @@ static int app_deal_common_control(uint8_t *payload, uint16_t *paysize)
 static int app_deal_upgrade(uint16_t cid, uint8_t *payload, int paysize)
 {
 	struct cProBasic *prohdr;
-	I4SC_FATAL("wo jing lai sheng ji le ");
+	//I4SC_FATAL("wo jing lai sheng ji le ");
 	if(!payload || !paysize){
 		I4SC_FATAL("parameter error2\r\n");
 		return 0;
@@ -423,12 +425,12 @@ static int app_deal_upgrade(uint16_t cid, uint8_t *payload, int paysize)
     prohdr = (struct cProBasic *)payload;
 	if(cid == CPRO_UPDATE_START){
 		uint16_t dsize = FLASH_WR_BUF_MAX;
-		I4SC_FATAL("111111111121\r\n");
+		//I4SC_FATAL("111111111121\r\n");
 		os_memcpy(payload+sizeof(struct cProBasic), &dsize, sizeof(uint16_t));
 		i4s_handle_event(OP_FIRM_BEGIN);
 		return  (bkapi_upgrade_init(prohdr->seqNo) < 0 ?1:0);
 	}else if(cid == CPRO_UPDATE_DATA){	
-		I4SC_FATAL("111111111111111131\r\n");	
+		//I4SC_FATAL("111111111111111131\r\n");	
 		i4s_handle_event(OP_FIRM_UPGRADEING);
 		bkapi_upgrade_data(prohdr->seqNo, payload+sizeof(struct cProBasic), paysize-sizeof(struct cProBasic));
 		return 0;
@@ -470,16 +472,16 @@ static int i4s_cmd_protocol_handle(int sock, uint8_t *buffer, int buf_size)
 		I4SC_FATAL("recv failed\r\n");
 		return 0;
 	}
-	I4SC_FATAL("recv=%d cli_addr=0x%x port=%d addr_len=%d\r\n", 
-		rev_len, cli_addr.sin_addr.s_addr, cli_addr.sin_port, addr_len);
+	/* I4SC_FATAL("recv=%d cli_addr=0x%x port=%d addr_len=%d\r\n", 
+		rev_len, cli_addr.sin_addr.s_addr, cli_addr.sin_port, addr_len); */
 
 	prohdr = (struct cProBasic *)buffer;
 	if(prohdr->head != CPRO_BASIC_MAGIC){
 		I4SC_FATAL("bad magic\r\n");
 		return 0;
 	}
-	I4SC_FATAL("Head:%d Recv SEQ:%d CMD->ID:%d AckNeed:%d reFlag:%d CMDLEN:%d RECVLEN:%d\r\n",
-			prohdr->head,prohdr->seqNo, prohdr->cid, prohdr->ackNeed , prohdr->reFlag , prohdr->len, rev_len);
+	/* I4SC_FATAL("Head:%d Recv SEQ:%d CMD->ID:%d AckNeed:%d reFlag:%d CMDLEN:%d RECVLEN:%d\r\n",
+			prohdr->head,prohdr->seqNo, prohdr->cid, prohdr->ackNeed , prohdr->reFlag , prohdr->len, rev_len); */
 
 	switch(prohdr->cid){
 		//设置license，无license设备不能用
@@ -781,7 +783,6 @@ int bkapi_upgrade_data(uint16_t seq_num, char *page, UINT32 len)
 	char *pay; 
 	UINT32 paylen;
 	char md5str[33] = {0};
-	int offset = 0;
 	int res=0;
 
 	if(!page || !len){
@@ -794,7 +795,12 @@ int bkapi_upgrade_data(uint16_t seq_num, char *page, UINT32 len)
 	pay = page;
 	paylen = len;
 	
-	if(seq_num == (bkUpgrade.seqno_init+1)){
+	if((seq_num == (bkUpgrade.seqno_init+1))&&(flag==0)){
+		if(flag==1)
+		{
+			return 0;
+		}
+		flag=1;
 		os_printf("first upgrade data:%d\r\n", seq_num);
 		bkUpgrade.seqno_data = seq_num;
 		//init firmware struct
@@ -822,7 +828,7 @@ int bkapi_upgrade_data(uint16_t seq_num, char *page, UINT32 len)
 	    
 	 if(bkUpgrade.rcv_size + paylen == fhead->size){
 		os_printf("firmware last part receive\r\n");
-		if(libota_write_fw(fhead->size,offset,pay,paylen) > 0){
+		if(libota_write_fw(fhead->size,offset,pay,paylen)){
 			os_printf("firmware last write failed\r\n");
 			return -5;
 		}	
@@ -846,15 +852,34 @@ int bkapi_upgrade_data(uint16_t seq_num, char *page, UINT32 len)
 		if(res=libota_write_fw(fhead->size,offset,pay,paylen)){
 			os_printf("libota_write_fw is error is %d!!!",res);
 			return -5;
+		}else
+		{
+			bkUpgrade.rcv_size += paylen;
+			bkUpgrade.seqno_data = seq_num;
+			offset += paylen;
+            int i = 0;
+			os_printf("firmware wirte successful[%d:%d/%d]\r\n", 
+			bkUpgrade.seqno_data, bkUpgrade.rcv_size, bkUpgrade.fw_header.size);
+			/* while(1)
+			{
+				
+				os_printf("%x ",pay[i]);
+				if(i==(paylen-1))
+				{
+					break;
+				}
+				i++;
+			} */
+    		
 		}
 	}
-	bkUpgrade.rcv_size += paylen;
+	/* bkUpgrade.rcv_size += paylen;
 	bkUpgrade.seqno_data = seq_num;
 	offset += paylen;
 
     os_printf("offset 8888 is %d",offset);
 	os_printf("firmware wirte successful[%d:%d/%d]\r\n", 
-			bkUpgrade.seqno_data, bkUpgrade.rcv_size, bkUpgrade.fw_header.size);
+			bkUpgrade.seqno_data, bkUpgrade.rcv_size, bkUpgrade.fw_header.size); */
 
 	return 0; 
 }

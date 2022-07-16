@@ -8,6 +8,7 @@
 
 #ifndef MD5_I_H
 #define MD5_I_H
+#define u32 int32_t
 
 typedef struct MD5Context_t{
 	u32 buf[4];
