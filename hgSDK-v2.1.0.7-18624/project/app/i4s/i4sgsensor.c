@@ -48,7 +48,8 @@ struct i2c_device *g_sensor_iic;
 #define UINT16 int32
 #define u8 int8
 
-
+static int X1,Y1,Z1;
+static int j=0;
 
 //static DD_HANDLE i2c_gsensor = DD_HANDLE_UNVALID;
 //static UINT8 i2c_salve_id = 0;
@@ -266,14 +267,31 @@ static void _get_xyz(void *param)
 	Z = ((ACCSum[2]-AccData_Drop[2][0]-AccData_Drop[2][1])/cAccBufPayLen) >> 6;
 
 #if 0
-	GSENSOR_PRT("mx:%d/%d \tmy:%d/%d \tmz:%d/%d\r\n",
+	/* GSENSOR_PRT("mx:%d/%d \tmy:%d/%d \tmz:%d/%d\r\n",
 			AccData_Drop[0][0], AccData_Drop[0][1], AccData_Drop[1][0], AccData_Drop[1][1],
-			AccData_Drop[2][0], AccData_Drop[2][1]);
-	GSENSOR_PRT("X:%d \tY:%d \tZ:%d\r\n", X, Y, Z);
+			AccData_Drop[2][0], AccData_Drop[2][1]); */
+			/* if((abs(X1-X)>10)||(abs(Y1-Y)>10)||(abs(Z1-Z)>10))
+			{
+				continue;
+			} */
+			X1+=X;
+			Y1+=Y;
+			Z1+=Z;
+			j++;
+			if(j=29)
+			{
+				X1=X1/30;
+				Y1=Y1/30;
+				Z1=Z1/30;
+				GSENSOR_PRT("X1:%d \tY1:%d \tZ1:%d\r\n", X, Y, Z);
+				gsonsor_conv2i4s(X1, Y1, Z1);
+				j=0;
+			}
+	//GSENSOR_PRT("X:%d \tY:%d \tZ:%d\r\n", X, Y, Z);
 #endif
-
+    
 	gsonsor_conv2i4s(X, Y, Z);
-	 os_sleep_ms(10);
+	 os_sleep_ms(5);
 
 	}//while end
 	 
@@ -336,6 +354,7 @@ int gsensor_init(void)
 
 #endif
 	//close SDO
+#if 0
 	buffer[0] = 0x05;
 	gsensor_i2c_write(0x1E, buffer, 1); //打开操作权限，0x1E 寄存器写 0x05
 	gsensor_i2c_read(0x57, buffer, 1); //读取 0x57 寄存器当前配置
@@ -343,7 +362,7 @@ int gsensor_init(void)
 	gsensor_i2c_write(0x57, buffer, 1); //操作 SDO_PU 位，0x57 寄存器写入配置
 	buffer[0] = 0x00;
 	gsensor_i2c_write(0x1E, buffer, 1);
-
+#endif
 	//start sensor
 	buffer[0] = 0x97; //0x9f
 	gsensor_i2c_write(0x20, buffer, 1);

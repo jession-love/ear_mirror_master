@@ -62,7 +62,7 @@ struct hgic_atcmd_normal {
 
 
 struct hgic_atcmd_normal *atcmd_uart_normal = NULL;
-
+#define  CONFIG_UMAC4
 
 #ifdef CONFIG_UMAC4
 int32 sys_wifi_event(uint8 ifidx, uint16 evt, uint32 param1, uint32 param2)
@@ -134,6 +134,7 @@ __weak void user_io_preconfig()
 __weak void user_protocol()
 {
     //spook_init();
+   // i4s_gsensor_init();
     extern int i4s_mcu_init(void);
 	i4s_mcu_init();
 
@@ -367,7 +368,7 @@ __init static void sys_wifi_init()
     struct ieee80211_initparam param;
     os_memset(&param, 0, sizeof(param));
     param.vif_maxcnt = 4;
-    param.sta_maxcnt = 8;
+    param.sta_maxcnt = 1;
     param.bss_maxcnt = 32;
     param.bss_lifetime  = 300; //300 seconds
     param.evt_cb = sys_wifi_event;
@@ -512,9 +513,9 @@ __init static void app_network_init()
     if (sys_cfgs.wifi_mode == WIFI_MODE_STA){
         sta_send_udp_msg_init();
     }
-    //speedTest_udp_server(8060);
+     speedTest_udp_server(8060);
     //speedTest_udp_client("192.168.1.100",43210);
-    //speedTest_tcp_server(43211);
+   // speedTest_tcp_server(43211);
 #if USB_EN || JPG_EN
     //void alk_net_data_init();
     
@@ -663,11 +664,13 @@ int main(void)
 {
     uint8 vcam;
     //sys_watchdog_init(); 
+    
     wifi_qc_mode_inspect();
     sys_watchdog_pre_init();
     skbpool_init(SKB_POOL_ADDR, SKB_POOL_SIZE, 80, 0);
     sys_efuse_load();
     sys_cfg_load();
+    
     vcam = vcam_en();
     user_io_preconfig();
     sys_mode_confirm();

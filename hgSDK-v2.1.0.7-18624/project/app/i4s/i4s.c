@@ -25,7 +25,7 @@
 #include "lwip\sockets.h"
 #include "lwip\netif.h"
 #include "lwip\dns.h"
-
+#include "sysctrl.h"
 #include "lwip\api.h"
 #include "lwip\tcp.h"
 #include <event.h>
@@ -186,6 +186,7 @@ extern volatile struct list_head *usr_p;			//应用的节点指针
 extern volatile struct list_head free_tab;			//空闲列表，存放空间节点
 extern struct dvp_device *dvp_test;
 static int flag=0;
+static volatile int updata_finish=0;
 
 //callback
 op_cb op_callback; /*operation callback*/
@@ -435,7 +436,8 @@ static int app_deal_upgrade(uint16_t cid, uint8_t *payload, int paysize)
 		bkapi_upgrade_data(prohdr->seqNo, payload+sizeof(struct cProBasic), paysize-sizeof(struct cProBasic));
 		return 0;
 	}else if(cid == CPRO_UPDATE_END){	
-		I4SC_FATAL("1111111111141\r\n");	
+		I4SC_FATAL("OTA updata finish12!!\r\n");
+		updata_finish=1;	
 		i4s_handle_event(OP_FIRM_UPGRADEOK);
 	}
 
@@ -623,6 +625,11 @@ static void _proto_task(void *arg)
 		if(FD_ISSET(pctxd->cmd_sockfd, &rdset)){
 			/*handle request*/
 			i4s_cmd_protocol_handle(pctxd->cmd_sockfd, pctxd->buffer, sizeof(pctxd->buffer));
+			if(updata_finish==1)
+		{
+			I4SC_FATAL("enter reboot!");
+			mcu_reset();
+		}
 		}
 		if(FD_ISSET(pctxd->pic_sockfd, &rdset)){
 			/*handle request*/

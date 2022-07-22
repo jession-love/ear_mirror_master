@@ -92,7 +92,7 @@ static void _ADC_battey_task(void *arg)
 				//printf("-,- - -! vol_f:%2.6f\r\n",vol_f);
 				    if(gpio_get_val(GPIO_DET_CHARGE)==1)
 					{
-						vol_f = vol_f-0.17;
+						vol_f = vol_f-0.3;
 						//printf("chong dian --- ");
 					} 
                   //防止充电电压变化 --启用注意上面区分
@@ -108,10 +108,13 @@ static void _ADC_battey_task(void *arg)
                 if(vol_f>4.00)
 				{
 					vol_f=100;
+				}else if(vol_f<3.55)
+				{
+					vol_f=0;
 				}
 				else
 				{
-				vol_f = 100-1000*(4.05-vol_f)/8;	//4.2满电，3.4空电为基准
+				vol_f = 100-1000*(4.2-vol_f)/6;	//4.2满电，3.4空电为基准
 				}
 				vol_sum[vol_count]=vol_f;
 				vol_count++;
@@ -153,7 +156,7 @@ static void _ADC_battey_task(void *arg)
 						}else{
 							low_vol_flag=0;
 						}
-						if(ad_pwr2<0)
+						if(ad_pwr2<=0)
 						{
 						    os_printf("Power off\r\n");	//	
 							gpio_set_val(GPIO_LED_BLUE,0);
@@ -326,7 +329,8 @@ int i4s_mcu_init(void)
 
 	i4s_gpio_init();
 	os_printf("----------i4s mcu init--------\r\n");
-	while(1)
+	//按键600ms开机
+	/* while(1)
 	{
 		if(gpio_get_val(GPIO_DET_CHARGE)==1)
 		{
@@ -345,8 +349,9 @@ int i4s_mcu_init(void)
 		break;
 	 }
 	 os_sleep_ms(100);
-	}
+	} */
 	//gpio_set_val(GPIO_CTRL_MCU,1);
+	gpio_set_val(GPIO_CTRL_MCU,1);
 	gpio_set_val(GPIO_LED_WHITE,1);
 	gpio_set_val(GPIO_LED_RED,0);
 	//这个函数类似于开线程

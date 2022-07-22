@@ -32,7 +32,7 @@ extern uint32_t userpool_end;
 #endif
 
 #ifndef SYS_HEAP_SIZE
-#define  SYS_HEAP_SIZE (108*1024+DVP_MALLOC_SIZE)
+#define  SYS_HEAP_SIZE (68*1024+DVP_MALLOC_SIZE)
 #endif
 
 #ifndef WIFI_RX_BUFF_SIZE

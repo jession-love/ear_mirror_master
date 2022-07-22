@@ -77,7 +77,7 @@ typedef struct _oeminfo_base_t{
 	uint8_t capacity; //bit0:gsensor; bit1-bit7 reserved
 }__attribute__((__packed__)) oeminfo_base_t;
 
-#define OEMINFO_DEFAULT_AP_PREFIX 		"TTCheng-"
+#define OEMINFO_DEFAULT_AP_PREFIX 		"Suear-"
 #define OEMINFO_DEFAULT_AP_PASSWORD		""
 #define OEMINFO_DEFAULT_AP_CAHNNEL		1
 #define OEMINFO_DEFAULT_NET_IP			"192.168.1.1"
@@ -85,7 +85,7 @@ typedef struct _oeminfo_base_t{
 #define OEMINFO_DEFAULT_NET_GW			"192.168.1.1"
 #define OEMINFO_DEFAULT_BASE_VENDOR		"YIPINCHENG"
 #define OEMINFO_DEFAULT_BASE_PRODUCT	"ICB-4U01-X6-L" //for ear
-#define OEMINFO_DEFAULT_BASE_VERSION	"8.000.002"
+#define OEMINFO_DEFAULT_BASE_VERSION	"8.000.006"
 #define OEMINFO_DEFAULT_BASE_PORT		10005
 #define OEMINFO_HWVERSION				"YPC-TW806-WIFI-V1.0"
 
